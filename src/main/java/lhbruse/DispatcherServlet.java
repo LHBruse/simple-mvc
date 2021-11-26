@@ -59,7 +59,7 @@ public class DispatcherServlet extends HttpServlet implements ApplicationContext
         try {
             doDispatch(req, resp);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Handler the request fail", e);
         } finally {
             RequestContextHolder.resetRequest();
         }
